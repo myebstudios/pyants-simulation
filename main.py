@@ -18,3 +18,5 @@ for i in range(ant_moves):
 
   ant2.forward(random.randint(1, 10))
   ant2.right(random.randint(-45,45))
+
+turtle.done()
