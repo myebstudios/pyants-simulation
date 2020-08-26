@@ -1,22 +1,21 @@
 import turtle
 import random
 
-ant_moves = 200 # The number of moves the ants make.
 
-ant1 = turtle.Turtle()
-ant1.speed(15)
-ant1.color('red')
+class Ant(turtle.Turtle):
+    def __init__(self, shape='arrow', speed=1, color='black'):
+        turtle.Turtle.__init__(self)
+        self.speed(speed)
+        self.color(color)
+        self.shape(shape)
 
-ant2 = turtle.Turtle()
-ant2.speed(15)
-ant2.color('blue')
+    def run(self, moves):
+        for i in range(moves):
+            self.forward(random.randint(1, 10))
+            self.right(random.randint(-45, 45))
 
-for i in range(ant_moves):
 
-  ant1.forward(random.randint(1, 10))
-  ant1.right(random.randint(-45,45))
-
-  ant2.forward(random.randint(1, 10))
-  ant2.right(random.randint(-45,45))
+Ant(shape="turtle", color="green", speed=10).run(200)
+Ant(color="brown", speed=5).run(100)
 
 turtle.done()
